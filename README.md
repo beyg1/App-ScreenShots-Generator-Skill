@@ -8,9 +8,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-**No Figma. No templates. Just results. Targeting the indie hackers.**
+**No Figma. No templates. Just results. Targeting the Indies.**
 
 ---
 
@@ -29,7 +28,7 @@ Turn raw, ugly screenshots into **cinematic, store-ready marketing assets**.
 | ⏱️ 2 Minutes | 🚀 Store-Ready Assets |
 
 <br>
-
+<div align="center">
 ## 🎨 Choose Your Vibe
 
 Don't settle for generic. Pick a style that fits your brand.
@@ -43,7 +42,7 @@ Don't settle for generic. Pick a style that fits your brand.
 | `ethereal_bokeh` | Dreamy, spiritual, soft | Yoga, Meditation, Wellness |
 | `aurora_gradient` | Flowing, alive colors | Music, Streaming, creative |
 | `neumorphism` | Soft UI, organized calm | Task Managers, Banking |
-
+</div>
 <br>
 
 ## 📱 Supported Devices
@@ -53,7 +52,7 @@ Don't settle for generic. Pick a style that fits your brand.
 *(Plus any custom device you can name)*
 
 <br>
-
+<div align="center">
 ## 🧠 Brains Behind The Beauty
 
 This isn't just a wrapper. It's a deterministic prompt engine that enforces design rules:
@@ -64,7 +63,8 @@ This isn't just a wrapper. It's a deterministic prompt engine that enforces desi
 3. COMPOSING:  Enforces 65% device visibility (no tiny phones!).
 4. RENDERING:  Generates consistent lighting, shadows, and textures.
 ```
-
+</div>
+<br>
 ### The Iron Rules 🛡️
 
 Every generated image is strictly guarded by these constraints:
