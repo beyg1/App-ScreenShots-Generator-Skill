@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # 📸 App Screenshot Generator
 
@@ -107,6 +107,7 @@ The skill takes over from there.
 
 - An AI coding agent with `generate_image` capability
 - Python 3.8+ (for the prompt engine)
+
 - That's it.
 
 <br>
@@ -134,4 +135,3 @@ MIT — use it, fork it, ship it.
 *Your app deserves better.*
 
 </div>
-]]>
