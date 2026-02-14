@@ -1,136 +1,119 @@
 <div align="center">
 
-# 📸 App Screenshot Generator
+![App Screenshot Generator Banner](banner.png)
 
-### AI Skill for Stunning App Store & Play Store Screenshots
+# App Screenshot Generator Skill
 
-**Drop your screens → Get store-ready assets.**
+### Drop your screens. Get store-ready assets.
 
-No Figma. No templates. Just results. Targetting the indies.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+**No Figma. No templates. Just results. Targeting the indie hackers.**
 
 ---
 
-<br>
-
 </div>
 
-## ✨ What It Does
+<br>
 
-Turn raw app screenshots into **premium, store-ready marketing assets** — in minutes.
+## ✨ Magic in Minutes
 
-| You Upload | You Get |
+Turn raw, ugly screenshots into **cinematic, store-ready marketing assets**.
+
+| **You Upload** | **AI Agent Generates** |
 |:---:|:---:|
-| Raw app screens | Cinematic device mockups |
-| Zero design skills | Professional marketing copy |
-| A few minutes | Store-ready screenshots |
+| 🖼️ Raw Screenshots | 🎨 Cinematic Mockups |
+| 📝 Zero Context | ✍️ Marketing Copy |
+| ⏱️ 2 Minutes | 🚀 Store-Ready Assets |
 
 <br>
 
-## 🎨 10 Visual Styles
+## 🎨 Choose Your Vibe
 
-Pick a vibe. The skill handles the rest.
+Don't settle for generic. Pick a style that fits your brand.
 
-| Style | Mood |
-|-------|------|
-| `glassmorphism` | Crystal, premium, tech launch |
-| `minimalist` | Apple Store, museum-clean |
-| `dark_futuristic` | Blade Runner, cyberpunk |
-| `3d_playful` | Pixar, toy-box fun |
-| `dark_luxury` | Black tie, credit card ad |
-| `ethereal_bokeh` | Dreamy, spiritual, ASMR |
-| `aurora_gradient` | macOS Sonoma, alive colors |
-| `neumorphism` | Soft UI, organized calm |
-| `clay_3d` | Dribbble, design portfolio |
-| `duotone` | Spotify, Nike, bold editorial |
+| Style | Mood | Best For |
+|-------|------|----------|
+| `glassmorphism` | Crystal, premium, depth | Fintech, Crypto, Modern SaaS |
+| `minimalist` | Satin finish, museum-clean | Productivity, Notes, Utilities |
+| `dark_futuristic` | Neon, wet floor, cyberpunk | Gaming, Developer Tools |
+| `3d_playful` | Clay, soft lighting, vibrant | Kids Apps, Social, Lifestyle |
+| `ethereal_bokeh` | Dreamy, spiritual, soft | Yoga, Meditation, Wellness |
+| `aurora_gradient` | Flowing, alive colors | Music, Streaming, creative |
+| `neumorphism` | Soft UI, organized calm | Task Managers, Banking |
 
 <br>
 
-## 📱 Device Frames
+## 📱 Supported Devices
 
-> iPhone 16 Pro · iPhone 15 Pro · Samsung S24 Ultra · Pixel 9 Pro · OnePlus 12 · iPad Pro · + Custom devices
+> iPhone 16 Pro • iPhone 15 Pro • Samsung S24 Ultra • Pixel 9 Pro • OnePlus 12 • iPad Pro
+
+*(Plus any custom device you can name)*
 
 <br>
 
-## 🧠 How It Works
+## 🧠 Brains Behind The Beauty
+
+This isn't just a wrapper. It's a deterministic prompt engine that enforces design rules:
 
 ```
-1. Upload your app screenshots
-2. AI analyzes each screen & suggests feature headlines
-3. You approve the headline/content mapping based on your screens.
-4. Screenshots generated — one by one, consistent style
-5. Files land in your project folder. Done.
+1. ANALYSIS:   AI scans each uploaded image to understand the feature.
+2. MAPPING:    It maps 'Home Screen' -> 'Your Day at a Glance' headline.
+3. COMPOSING:  Enforces 65% device visibility (no tiny phones!).
+4. RENDERING:  Generates consistent lighting, shadows, and textures.
 ```
 
-### The Secret Sauce
+### The Iron Rules 🛡️
 
-Every screenshot follows **3 iron rules**:
-
-- 📐 **Device fills 65%+** of the frame — your app is the hero
-- 🔤 **Text never overlaps** the device screen — ever
-- 🧹 **Clean backgrounds** — no clutter, no floating icons
+Every generated image is strictly guarded by these constraints:
+- ❌ **No Text Overlap**: Text never touches the UI.
+- 📐 **Device Dominance**: Phone must fill 65%+ of the frame.
+- 🧹 **Zero Clutter**: No random flying 3D objects (unless requested).
 
 <br>
 
-## 🗂 Project Structure
+## 🚀 Get Started
 
-```
-app-screenshot-generator/
-├── SKILL.md                          # Agent instructions
-├── scripts/
-│   └── prompt_generator.py           # Deterministic prompt engine
-└── references/
-    ├── design_trends_2025.md         # Style templates & trends
-    └── story_arcs.md                 # Narrative structures
-```
-
-<br>
-
-## 🚀 Quick Start
-
-### 1. Install the Skill
-
-Copy the `app-screenshot-generator` folder into your AI agent's skills directory:
-
+### 1. Install
+Copy the skill to your agent's brain:
 ```bash
 cp -r app-screenshot-generator/ ~/.your-agent/skills/
 ```
 
-### 2. Use It
-
-Just ask your AI agent:
-
+### 2. Run
+Just tell your agent:
 > *"Generate Play Store screenshots for my app"*
 
-The skill takes over from there.
-
-### Requirements
-
-- An AI coding agent with `generate_image` capability
-- Python 3.8+ (for the prompt engine)
-
-- That's it.
+### 3. Profit
+Receive a folder of high-res, 9:16 PNGs ready for upload.
 
 <br>
 
-## 🎯 Built For
+## 🗂 Under the Hood
 
-- **Indie devs** who can't afford a designer
-- **Startups** moving too fast for Figma mockups
-- **Side projects** that deserve better than basic screenshots
+```text
+app-screenshot-generator/
+├── SKILL.md                  # The Brain (Agent Instructions)
+├── scripts/
+│   └── prompt_generator.py   # The Engine (Python Logic)
+└── references/
+    ├── design_trends_2025.md # The Style Guide
+    └── story_arcs.md         # The Narrative
+```
 
 <br>
 
 ## 📄 License
 
-MIT — use it, fork it, ship it.
-
-<br>
+MIT — Build, ship, fork, sell. usage is free.
 
 ---
 
 <div align="center">
 
-**Stop struggling with generating screenshots.**
+**Stop struggling with screenshots.**
 
 *Your app deserves better.*
 
