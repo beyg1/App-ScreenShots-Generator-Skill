@@ -32,14 +32,27 @@ Gather context conversationally. Ask these in order:
         - **BAD**: "Dashboard", "Settings", "Collections"
         - **GOOD**: "Track Every Prayer", "Customize Your Experience", "Your Duas, Beautifully Organized"
 2.  **App Basics**: Name, Category (e.g., Fitness, Finance, Prayer), and Core Value Prop (USP).
-3.  **App Color Palette**: Ask the user for their app's primary color palette (2-3 colors, e.g., "Navy Blue, Warm Cream, Gold").
-    *   If not provided, **select 1-2 representative screenshots** (e.g., the Home screen) and examine ONLY those to extract the dominant UI colors. **DO NOT** attempt to analyze all uploaded images at once, as this may exceed tool limits.
+3.  **App Color Palette (AUTO-EXTRACTED — DO NOT ASK THE USER)**:
+    *   Select 1-2 representative screenshots (e.g., the Home screen and one alternate theme) and **view them** using the `view_file` tool to visually identify the dominant UI colors (background, primary accent, secondary accent).
+    *   Describe the extracted palette in the feature-mapping table (e.g., "Deep Midnight Blue #0f172a, Gold #fbbf24") and include it for user confirmation alongside the headline table. The user may override if they disagree.
     *   This palette is passed via `--app-colors` to ensure screenshots complement the app's brand.
 4.  **Device Selection**: Ask the user which device frame to display.
     *   Available presets: `iphone_16_pro`, `iphone_16_pro_max`, `iphone_15_pro`, `iphone_15_pro_max`, `samsung_s24_ultra`, `samsung_s24`, `pixel_9_pro`, `pixel_9`, `oneplus_12`, `generic_android`, `ipad_pro`.
     *   If the user's device is not listed, use `--device custom --custom-device-name "Device Name"`.
-5.  **Visual Style**: Consult `references/design_trends_2025.md` to suggest a style.
-    *   Options: `glassmorphism`, `minimalist`, `dark_futuristic`, `3d_playful`, `dark_luxury`, `ethereal_bokeh`, `aurora_gradient`, `neumorphism`, `clay_3d`, `duotone`.
+5.  **Visual Style (PRESENT ALL OPTIONS — NON-NEGOTIABLE)**:
+    *   Read `references/design_trends_2025.md` and present **ALL** available styles to the user in a numbered list with a one-line description and the "When to use" context for each:
+        1.  **Prismatic Glassmorphism** (`glassmorphism`) — Frosted glass panels, premium depth. Best for: fintech, productivity, health.
+        2.  **Satin Minimalist** (`minimalist`) — Clean matte surfaces, Apple-style. Best for: tools, utilities, developer apps.
+        3.  **Cyber-Gloss** (`dark_futuristic`) — Neon on black, wet-floor reflections. Best for: gaming, crypto, tech.
+        4.  **Vinyl Toy 3D** (`3d_playful`) — Colorful pastel, Pixar-style. Best for: kids, casual games, social.
+        5.  **Obsidian & Accent** (`dark_luxury`) — Piano black, metallic highlights. Best for: fashion, fintech, premium.
+        6.  **Ethereal Bokeh** (`ethereal_bokeh`) — Floating particles, dreamy glow. Best for: meditation, prayer, art.
+        7.  **Aurora Gradient** (`aurora_gradient`) — Flowing mesh gradients. Best for: any modern app.
+        8.  **Neumorphism** (`neumorphism`) — Soft embossed UI. Best for: productivity, dashboards.
+        9.  **Matte Clay 3D** (`clay_3d`) — Clay mockup finish. Best for: design portfolios, SaaS.
+        10. **Duotone** (`duotone`) — Bold two-color split. Best for: music, fashion, bold brands.
+    *   Based on the app's category and UI, **recommend exactly 1 style** with a brief rationale (e.g., "I recommend **Ethereal Bokeh** — it matches the spiritual, meditative nature of your app").
+    *   **Wait for the user to confirm** their style choice before proceeding.
 6.  **Narrative**: Consult `references/story_arcs.md` to pick a structure.
     *   Options: `feature_dive`, `lifestyle_flow`, `game_hype`, `ai_magic`.
 7.  **Headlines**: If the user provides custom headlines, use them. Otherwise, generate feature-focused marketing copy per screen based on the Image Analysis table (step 1.5). Headlines MUST highlight a specific benefit or feature — never use generic labels.
@@ -89,17 +102,22 @@ Every generated image MUST satisfy these 3 rules:
 1.  Use the `prompt` field from the script's JSON output as the prompt.
 2.  If `input_file` is not null, pass it as the `ImagePaths` argument to `generate_image`.
 3.  Save the generated image using a descriptive `ImageName` (e.g., `appname_screenshot_1_hero`).
-4.  **CRITICAL**: The `generate_image` tool saves to an internal directory. You MUST move it to the user's project directory immediately.
-    *   Command: `mv /path/to/internal/brain/image.png /user/project/directory/image.png`
+4.  **CRITICAL — SAVE TO PROJECT DIRECTORY (NON-NEGOTIABLE)**: The `generate_image` tool saves images to the agent's internal artifact directory (`<appDataDir>/brain/<conversation-id>/`). You MUST move each generated image to the **user's project workspace directory** immediately after generation.
+    *   Determine the project directory from the user's workspace URI (visible in `<user_information>`). If multiple workspaces exist, ask the user which one to use.
+    *   Create a subfolder called `screenshots/` inside the project directory if it doesn't already exist.
+    *   Command: `mkdir -p /path/to/project/screenshots/ && mv /path/to/brain/image.png /path/to/project/screenshots/image.png`
+    *   Use clean, numbered filenames: `01_Headline_Name.png`, `02_Headline_Name.png`, etc.
     *   The `prompts.json` file should remain in the temp directory and be deleted after the task is complete.
+    *   **NEVER** leave final generated images in the agent's brain/artifact directory. They MUST end up in the project directory.
 5.  **After generating**: Visually verify the 3 guardrails. If violated, regenerate with explicit corrections appended to the prompt.
 6.  Show the first image to the user for style approval before generating the rest.
 7.  Generate remaining images, maintaining the SAME style keywords throughout.
 
 ### Phase 4: Final Assembly & Export
 
-*   Verify all **final** generated images are saved in the user's **project directory**.
-*   Verify that `prompts.json` and source images were **NOT** left cluttering the project root.
+*   Verify all **final** generated images are saved in the user's **project directory** under `screenshots/`. Run `list_dir` on the `screenshots/` folder to confirm all expected images are present.
+*   Verify that `prompts.json` and intermediate files were **NOT** left in the project root or the agent's artifact directory.
+*   Verify that the agent's brain/artifact directory does **NOT** contain any final screenshot PNGs — they should all have been moved.
 *   Offer to regenerate any specific screen that breaks the visual flow.
 
 ## References
