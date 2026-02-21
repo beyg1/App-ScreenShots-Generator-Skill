@@ -11,6 +11,9 @@
 
 **No Figma. No templates. Just results. Targeting the Indies.**
 
+> [!NOTE]
+> Tools like Antigravity do not generate images with a 9:16 aspect ratio yet. But no worries—just generate your screenshots here, and later go to the ChatGPT or Gemini app and have them resize (to aspect ratio required) without messing up the design of the screenshots.
+
 ---
 
 <br>
