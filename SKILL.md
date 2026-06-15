@@ -76,7 +76,10 @@ Gather context conversationally. Cover these topics (ideally in ONE prompt):
 6.  **Narrative**: Consult `references/story_arcs.md` to pick a structure.
     *   Options: `feature_dive`, `lifestyle_flow`, `game_hype`, `ai_magic`.
 7.  **Headlines**: If the user provides custom headlines, use them. Otherwise, generate feature-focused marketing copy per screen based on the Image Analysis table (step 1.5). Headlines MUST highlight a specific benefit or feature — never use generic labels.
-8.  **Aspect Ratio**: `9:16` (phone, default) or `16:9` (tablet/landscape).
+8.  **Store & Dimensions Selection**: `9:16` (phone, default) or `16:9` (tablet/landscape).
+    *   **CRITICAL REQUIREMENT**: You MUST explicitly ask the user which store (App Store or Google Play Store) they are targeting, and prompt them to decide which specific dimensions they want to create screenshots for.
+    *   Present the official dimensions to them: For App Store, list sizes like 6.9" (1320x2868), 6.5" (1284x2778), or 5.5" (1242x2208). For Google Play Store, list standard sizes (e.g., 1080x1920 or 1440x2560).
+    *   Explain to the user that this decision is necessary because the resulting screenshots will be fed into **Nano Banana Pro** and **Nano Banana 2**, which rely on strict App Store and Play Store compliance. Wait for their selection before proceeding.
 
 ### Phase 2: Prompt Generation
 

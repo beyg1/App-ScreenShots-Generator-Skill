@@ -82,9 +82,9 @@ Every generated image is strictly guarded by these constraints:
 ## 🚀 Get Started
 
 ### 1. Install
-Copy the skill to your agent's brain:
+Install the skill using the official CLI:
 ```bash
-cp -r app-screenshot-generator/ ~/.your-agent/skills/
+npx skills add app-screenshot-generator
 ```
 
 ### 2. Run
