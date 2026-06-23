@@ -142,7 +142,12 @@ python3 scripts/prompt_generator.py \
 
 ### Phase 3: Execution Loop
 
-**RATE LIMIT WARNING (CRITICAL)**: Image generation APIs have strict rate limits. You MUST execute generation **one image at a time SEQUENTIALLY**. Do NOT attempt to generate multiple images in parallel. You must wait for the previous `generate_image` call to complete before initiating the next one.
+**ENVIRONMENT CHECK (CRITICAL)**:
+Before executing generation, check if you have a native `generate_image` tool (e.g., in Antigravity).
+- **If you HAVE `generate_image`**: Follow the "Native Execution" steps below.
+- **If you DO NOT have `generate_image` (e.g., ChatGPT, Claude Code)**: Follow the "Fallback Execution" steps below.
+
+**RATE LIMIT WARNING (CRITICAL)**: Image generation APIs have strict rate limits. You MUST execute generation **one image at a time SEQUENTIALLY**. Do NOT attempt to generate multiple images in parallel.
 
 #### Composition Guardrails (NON-NEGOTIABLE)
 
@@ -155,7 +160,7 @@ Every generated image MUST satisfy these rules:
 5.  **Aspect Ratio & Resolution**: The script automatically injects aspect ratio framing at the START and END of every prompt. The agent does NOT need to manually append an `OUTPUT FORMAT` suffix — it's baked in. If the output is still square, see Troubleshooting.
 
 
-#### Execution Steps
+#### Execution Steps (Native Execution - Antigravity)
 
 1.  Use the `prompt` field from the script's JSON output as the prompt.
 2.  If `input_file` is not null, pass it as the `ImagePaths` argument to `generate_image`.
@@ -164,11 +169,16 @@ Every generated image MUST satisfy these rules:
     *   Determine the project directory from the user's workspace URI (visible in `<user_information>`). If multiple workspaces exist, ask the user which one to use.
     *   Create a subfolder called `screenshots/` inside the project directory if it doesn't already exist.
     *   Command: `mkdir -p /path/to/project/screenshots/ && mv /path/to/brain/image.png /path/to/project/screenshots/image.png`
-    *   Use clean, numbered filenames: `01_Headline_Name.png`, `02_Headline_Name.png`, etc.
     *   The `.screenshot-gen-tmp` directory and its contents should be deleted after the task is complete to clean up the workspace.
 5.  **After generating**: Visually verify the 3 guardrails. If violated, regenerate with explicit corrections appended to the prompt.
 6.  Show the first image to the user for style approval before generating the rest.
 7.  Generate remaining images, maintaining the SAME style keywords throughout.
+
+#### Execution Steps (Fallback Execution - ChatGPT / Claude Code)
+
+1.  **ChatGPT Images 2.0 (Imagine 2) / ChatGPT**: Leverage the native GPT Image 2 capabilities. This model has excellent multi-image coherence and text-rendering. Pass the text prompts directly. If the user provided UI screenshots, utilize them as visual references if the platform supports it to preserve exact UI structures, otherwise proceed with text-based generation and advise the user.
+2.  **Claude Code**: Leverage Claude Code's native image generation capabilities to generate the screenshots directly. Provide the generated images sequentially.
+3.  Delete `.screenshot-gen-tmp` after generation is complete.
 
 ### Phase 4: Final Assembly & Export
 

@@ -11,10 +11,29 @@
 
 **No Figma. No templates. Just results. Targeting the Indies.**
 
+This agent skill gives your AI assistant the ability to take raw, plain app screenshots and transform them into **high-converting, beautifully framed App Store and Google Play marketing assets**. It analyzes your screenshots, generates marketing copy, applies your brand colors, and renders them in diverse 3D visual styles.
+
 > [!NOTE]
 > Tools like Antigravity do not generate images with a 9:16 aspect ratio yet. But no worries—just generate your screenshots here, and later go to the ChatGPT or Gemini app and have them resize (to aspect ratio required) without messing up the design of the screenshots.
 
 ---
+
+## 🚀 Installation
+
+Install the skill using the official CLI:
+```bash
+npx skills add app-screenshot-generator
+```
+
+<br>
+
+## 🤖 Agent Compatibility
+
+This skill is designed to be highly portable and works across different AI agent environments:
+
+- **Antigravity (AG)**: Native integration. The agent will use its internal tools to perform image-to-image generation, preserving your exact UI while framing it flawlessly.
+- **ChatGPT / Codex**: The agent will leverage ChatGPT Images 2.0 (Imagine 2) to perform highly precise text rendering and compositional image generation.
+- **Claude Code**: The agent natively generates images, allowing it to seamlessly render your screenshots directly within your workflow.
 
 <br>
 
@@ -80,12 +99,6 @@ Every generated image is strictly guarded by these constraints:
 <br>
 
 ## 🚀 Get Started
-
-### 1. Install
-Install the skill using the official CLI:
-```bash
-npx skills add app-screenshot-generator
-```
 
 ### 2. Run
 Just tell your agent:
