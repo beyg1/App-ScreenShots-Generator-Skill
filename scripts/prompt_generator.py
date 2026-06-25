@@ -150,10 +150,11 @@ COMPOSITION_RULES_BASE = (
     "and approximately 90% of the total screenshot WIDTH. It is the hero subject — large and prominent. "
     "Leave a 20-25% text zone at the top or bottom for the headline. "
     "The remaining space is clean breathing room around the subject. "
-    "2) TEXT PLACEMENT: The headline text MUST be placed ABOVE the subject (in the top 20-25% of the image) "
+    "2) TEXT PLACEMENT & TYPOGRAPHY: The headline text MUST be placed ABOVE the subject (in the top 20-25% of the image) "
     "or BELOW the subject (in the bottom 20-25% of the image). "
     "The text must NEVER overlap, cover, or obstruct ANY part of the UI screen. "
     "The headline should be on the background area only. "
+    "TYPOGRAPHY CONSISTENCY (CRITICAL): The headline text MUST use exactly the same font family, font size, and font color across all images in the sequence to ensure a uniform design. "
     "3) CLEAN BACKGROUND: The background should be clean and minimal. "
     "No random floating objects unless the style (e.g. 3d_playful, immersive_scene) explicitly calls for them. "
     "The focus is: background + subject + headline text. "
@@ -733,6 +734,7 @@ def generate_prompts(app_name, category, count, usp, style_mode="glassmorphism",
             f"SUBJECT: {visual_focus} "
             f"SEQUENCE: This is screenshot {i} in a {count}-image panoramic sequence. "
             f"Maintain consistent background gradient direction and color palette across all images. "
+            f"TYPOGRAPHY CONSISTENCY (CRITICAL): Use exactly the same font family, font size, and font color for the headline text as the other images in this sequence. "
             f"{ar_suffix}"
         )
 

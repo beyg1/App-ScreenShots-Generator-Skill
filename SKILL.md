@@ -157,7 +157,8 @@ Every generated image MUST satisfy these rules:
 2.  **Text outside device**: Headline text is ABOVE or BELOW the device frame. It NEVER overlaps, covers, or obstructs the device screen.
 3.  **Clean background**: No random floating objects unless the chosen style explicitly includes them (e.g., `3d_playful`).
 4.  **Materiality**: Every surface must have a defined texture (glass, metal, plastic, liquid). NOTHING should look flat or unrendered.
-5.  **Aspect Ratio & Resolution**: The script automatically injects aspect ratio framing at the START and END of every prompt. The agent does NOT need to manually append an `OUTPUT FORMAT` suffix — it's baked in. If the output is still square, see Troubleshooting.
+5.  **Typography Consistency**: Headline text MUST use exactly the same font family, font size, and font color across all images in the sequence to ensure a uniform design.
+6.  **Aspect Ratio & Resolution**: The script automatically injects aspect ratio framing at the START and END of every prompt. The agent does NOT need to manually append an `OUTPUT FORMAT` suffix — it's baked in. If the output is still square, see Troubleshooting.
 
 
 #### Execution Steps (Native Execution - Antigravity)
